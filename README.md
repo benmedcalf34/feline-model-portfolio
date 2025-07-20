@@ -4,6 +4,8 @@ My approach for tackling the assigned tasks would be to start with a simple fron
 
 My responses to each of the assigned tasks are located in Q1.md, Q2.md, and Q3.md, but will also be listed below.
 
+Immediate next steps I would take would be to first fully implement the backend, database, and API as they currently are. From there I would implement JWT-based authentication and session handling before deploying the application using Vercel. Finally I would implement additional features such as an advanced search, and tidy up the UI with the help of Tailwind or Bootstrap.
+
 # Q1: Front-End Design
 ## Explanation
 For the front-end, I built a simple webapp with Next.js that displays feline models and their associated information in separate blocks, that can each be clicked in order to book an appointment. The components are currently somehwat unstructured, as all frontend logic is handled in a single file. This is due to the simplicity of the app itself, and one of the first things that I would change when scaling up the application would be to split larger components into separate files in order to provide more modularity. Additional features I would build would be an advanced search at the top of the page that can filter models by their characteristics (length, weight, breed, etc), a way to click between popups for the feline models without having to close the current popup and reopen a new one, and a login/auth system using JWT.
