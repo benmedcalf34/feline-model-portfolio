@@ -1,27 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
-  // For example, fetch data from your DB here
-  const users = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' }
-  ];
-  return new Response(JSON.stringify(users), {
+export async function GET() {
+  try {
+      const models = [
+        {}
+      ];
+  return new Response(JSON.stringify(models), {
     status: 200,
     headers: { 'Content-Type': 'application/json' }
   });
+  }  catch (error) {
+    console.error('Error getting feline models:', error);
+    return new NextResponse('Error getting feline models', { status: 400 });
+  }
 }
  
 export async function POST(request: NextRequest) {
-  // Parse the request body
-  const body = await request.json();
-  const { name } = body;
- 
-  // e.g. Insert new user into your DB
-  const newUser = { id: Date.now(), name };
- 
-  return new Response(JSON.stringify(newUser), {
-    status: 201,
-    headers: { 'Content-Type': 'application/json' }
-  });
+  try {
+    const newModel = await request.json();
+
+    return new Response(JSON.stringify(newModel), {
+      status: 201,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    console.error('Error adding feline model:', error);
+    return new NextResponse('Error adding feline model', { status: 400 });
+  }
 }

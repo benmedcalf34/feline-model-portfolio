@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </div>
     ))}
-          {selectedCat && (
+      {selectedCat && (
         <div className={styles.overlay}>
           <div className={styles.popup}>
             <h2>{selectedCat.name}</h2>
